@@ -13,14 +13,18 @@
                 <h5 class="card-title">
                     {{ $viewData["product"]["name"] }}
                 </h5>
-                <p class="card-text">{{ $viewData["product"]["description"] }}</p>
 
-                @if (($viewData["product"]["price"]) > 100)
-                    <p class="card-text text-danger">Price: ${{ $viewData["product"]["price"] }}</p>
+                @if ($viewData["product"]["price"] > 100)
+                <p class="card-text text-danger">Price: ${{ $viewData["product"]["price"] }}</p>
                 @else
-                    <p class="card-text">Price: ${{ $viewData["product"]["price"] }}</p>
+                <p class="card-text">Price: ${{ $viewData["product"]["price"] }}</p>
                 @endif
+
+                @foreach($viewData["product"]->comments as $comment)
+                - {{ $comment->getDescription() }}<br />
+                @endforeach
             </div>
+
         </div>
     </div>
 </div>
