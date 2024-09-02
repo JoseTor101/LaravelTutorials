@@ -6,10 +6,10 @@
     <div class="row text-center">
         <h2>Product</h2>
         <div class="col-lg-4 ms-auto">
-            <p class="lead">Name: {{$viewData["product"]["name"]}} </p>
+            <p class="lead">Name: {{$viewData["product"]->getName()}} </p>
         </div>
         <div class="col-lg-4 me-auto">
-            <p class="lead">Price: {{$viewData["product"]["price"]}}</p>
+            <p class="lead">Price: {{$viewData["product"]->getPrice()}}</p>
         </div>
     </div>
 </div>
