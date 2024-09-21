@@ -37,6 +37,7 @@
                 <a class="nav-link active" href="{{ route('fishes.show') }}">Listar peces</a>
                 <a class="nav-link active" href="{{ route('fishes.register') }}">Registar peces</a>
                 <a class="nav-link active" href="{{ route('fishes.statistics') }}">Estadisticas peces</a>
+                <a class="nav-link active" href="{{ route('create_product') }}">Crear Producto</a>
                 </div>
             </div>
         </div>

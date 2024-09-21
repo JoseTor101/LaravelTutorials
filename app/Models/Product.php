@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Comment;
+//use Dotenv\Validator;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Validator;
 
 class Product extends Model
 {
@@ -77,5 +79,15 @@ class Product extends Model
     {
 
         $this->comments = $comments;
+    }
+
+    public function validate(Array $data): Array
+    {
+        $validator = Validator::make($data, [
+            'name' => 'required|string',
+            'price' => 'required|integer',
+        ]);
+
+        return $validator->validate();
     }
 }
